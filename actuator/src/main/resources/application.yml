@@ -1,58 +1,31 @@
-
-
+server:
+  tomcat:
+    mbeanregistry:
+      enabled: true
 management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
-      base-path: "/manage"
-  server:
-    port: 9292
   info:
     java:
       enabled: true
     os:
       enabled: true
+    env:
+      enabled: true
+  server:
+    port: 8080
   endpoint:
     shutdown:
       enabled: true
     health:
       show-components: always
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+info:
+  app:
+    name: hello-actuator
+    company: yh
 
 logging:
   level:
-    hello.controller: info
-
-
-
-
-
-
-
-#management:
-#  info:
-#    java:
-#      enabled: true
-#    os:
-#      enabled: true
-#    env:
-#      enabled: true
-#  server:
-#    port: 8080
-#  endpoint:
-#    shutdown:
-#      enabled: true
-#    health:
-#      show-components: always
-#  endpoints:
-#    web:
-#      exposure:
-#        include: "*"
-#info:
-#  app:
-#    name: hello-actuator
-#    company: yh
-#
-#logging:
-#  level:
-#    hello.controller: debug
+    hello.controller: debug
